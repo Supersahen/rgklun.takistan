@@ -1,4 +1,3 @@
-
 [] spawn {
 	private["_uid", "_id"];
 	_uid = getPlayerUID player;
@@ -6,10 +5,6 @@
 	_cid = player;
 	uiSleep 2;
 	titleText ["Loading Stats","PLAIN"]; // Displays text
-	if (isNil "dynamiccuntflap") then {
-			diag_log "Setting Money to default as no stats loaded";
-			[player, startmoneh] call set_dynamiccuntflap;
-	};
 	
 	if (isNil "iscop" or isNil "isopf" or isNil "isins" or isNil "isciv" or isNil "isesu") exitWith {player groupChat "You are glitched. Stats will not be saved"};
 	
@@ -104,6 +99,13 @@
 	uiSleep 1;
 	stats_loaded = true;
 	
+	private["_bank_amount"];
+	_bank_amount = [_cid] call get_dynamiccuntflap;
+	if (_bank_amount == 0 ) then {
+			diag_log "Setting Money to default as no stat loaded";
+			[player, startmoneh] call set_dynamiccuntflap;
+	};
+	
 	if (!police_agreement and iscop) then {
 		[] spawn agreement_dialog;
 	};
@@ -121,8 +123,6 @@
 	
 	[str ("RISE GAMING") ,  str("Takistan Life: Revolution"), str("Welcome To Takistan")] spawn BIS_fnc_infoText;
 };
-
-
 
 
 

@@ -15,21 +15,12 @@ set_dynamiccuntflap = {
 	private["_player", "_value"];
 	_player = _this select 0;
 	_value = _this select 1;
-	diag_log _player;
-	diag_log _value;
 	if (not([_player] call player_human)) exitWith {};
-	diag_log "Player is human";
 	if (isNil "_value") exitWith {};
-	diag_log "Value is valid";
 	if (typeName _value != "SCALAR") exitWith {};
-	diag_log "Value is not a scalar";
 	
 	_value = [_value] call encode_number;
-	diag_log encoded_number;
-	diag_log _value;
 	[_player, "dynamiccuntflap", _value] call player_set_array;
-	diag_log player_set_array;
-	diag_log "value set"
 };
 
 

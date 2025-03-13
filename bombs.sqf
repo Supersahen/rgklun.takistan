@@ -147,7 +147,7 @@ if (_art == "init") then {
 		};
 
     if (isServer) then {["server"] spawn A_SCRIPT_BOMBS;};
-    ["client"] spawn A_SCRIPT_BOMBS;
+    //["client"] spawn A_SCRIPT_BOMBS;
 };
 
 if (_art == "server") then {

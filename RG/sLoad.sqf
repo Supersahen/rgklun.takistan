@@ -9,8 +9,8 @@ _loadFromDBClient =
 	
 	_varName = _array select 1;
 	_varValue = _array select 2;
-	diag_log format['STAT INFO -> UID: %1 - VARNAME: %2 - VARVALUE: %3',_uid,_varName,_varValue];
 	if(isNil '_varValue') exitWith {};
+	diag_log format['STAT INFO -> UID: %1 - VARNAME: %2 - VARVALUE: %3',_uid,_varName,_varValue];
 
 	if (isNil 'iscop' or isNil 'isopf' or isNil 'isins' or isNil 'isciv' or isNil 'isesu') exitWith {};
 	

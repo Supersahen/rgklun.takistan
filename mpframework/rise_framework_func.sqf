@@ -389,9 +389,9 @@ mp_playerinfo = {
 	_donor = "No";
 
 	if (donator1) then {_donor = "Level 1"};
-	if (donator2) then {_donor = "Level 1"};
-	if (donator3) then {_donor = "Level 1"};
-	if (donator4) then {_donor = "Level 1"};
+	if (donator2) then {_donor = "Level 2"};
+	if (donator3) then {_donor = "Level 3"};
+	if (donator4) then {_donor = "Level 4"};
 	if (isvip) then {_donor = "VIP"};
 
 	if (pmc) then {_pmc_status = "Yes"};
