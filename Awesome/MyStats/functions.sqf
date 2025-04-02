@@ -21,7 +21,7 @@ stats_load_request_receive = {
 	if (isNil "_request") exitWith {};
 	if (typeName _request != "ARRAY") exitWith {};
 
-	private["_uid", "_response_variable"];
+	private["_uid", "_response_variable", "_data"];
 	_uid = _request select stats_load_request_uid;
 	_response_variable = _request select stats_load_request_response_variable;
 
@@ -31,7 +31,6 @@ stats_load_request_receive = {
 	if (isNil "_response_variable") exitWith {};
 	if (typeName _response_variable != "STRING") exitWith {};
 
-	private["_data"];
 	_data = [_uid] call getAllPlayerVariables;
 	server setVariable[_response_variable, _data, true];
 };
